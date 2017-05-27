@@ -1,54 +1,51 @@
 {
   "name": "ask",
-  "version": "1.0.0",
-  "description": "It is a libaray for asking questions on the command line",
+  "version": "0.0.1",
+  "description": "Quick and easy to generate a cli",
   "main": "index.js",
-  "repository": {
-    "url": "https://github.com/blackcater/ask.git",
-    "type": "git"
-  },
-  "author": "汤轶侬 <164710166@qq.com>",
+  "repository": "https://github.com/blackcater/ask.git",
+  "author": "blackcater <blackcater2015@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --config ./webpack.config.dev.js",
-    "pro": "webpack --config ./webpack.config.pro.js",
-    "lint": "eslint ./src",
-    "lint:test": "eslint ./test",
-    "test": "karma start",
-    "test:watch": "karma start --autoWatch=true --singleRun=false"
+    "dev": "rollup -c rollup.config.js -w",
+    "pro": "rollup -c rollup.config.js",
+    "lint": "xo",
+    "test": "jest --color --clearMocks",
+    "test:watch": "jest --color --clearMocks --watch",
+    "coverage": "jest --color --clearMocks --coverage"
   },
   "dependencies": {
     "chalk": "^1.1.3",
-    "cli-spinners": "^1.0.0",
-    "listr": "^0.10.0",
-    "select-shell": "^0.1.1"
+    "cli-spinners": "^1.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.3.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "chai": "^3.5.0",
-    "core-js": "^2.4.1",
-    "eslint": "^3.15.0",
-    "eslint-config-airbnb-base": "^11.1.0",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-import": "^2.2.0",
-    "isparta-instrumenter-loader": "^1.0.1",
-    "karma": "^1.4.1",
-    "karma-chai": "^0.1.0",
-    "karma-coverage": "^1.1.1",
-    "karma-mocha": "^1.3.0",
-    "karma-mocha-reporter": "^2.2.2",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.2",
-    "mocha": "^3.2.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "webpack": "^2.2.1"
+    "babel-cli": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint-config-finger": "^0.2.0",
+    "jest": "^20.0.4",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-json": "^2.1.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": [
+      "finger"
+    ],
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ]
+    },
+    "envs": [
+      "node",
+      "es6",
+      "jest"
+    ]
   }
 }
