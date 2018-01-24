@@ -1,6 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import babel from 'rollup-plugin-babel'
+import typescript from 'rollup-plugin-typescript'
 
 export default {
   input: 'src/index.ts',
@@ -19,7 +19,7 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    babel({ exclude: 'node_modules/**' }),
+    typescript(),
   ],
   watch: {
     include: 'src/**',

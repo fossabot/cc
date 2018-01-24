@@ -5,6 +5,8 @@
  * @param {number} b
  * @returns {any}
  */
-export function add(a = 0, b = 0) {
-  return a + b
+function add(a = 0, b = 0) {
+    return a + b;
 }
+
+export { add };

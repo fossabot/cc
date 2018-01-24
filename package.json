@@ -6,6 +6,8 @@
   "repository": "https://github.com/blackcater/ask.git",
   "author": "blackcater <blackcater2015@gmail.com>",
   "license": "MIT",
+  "module": "dist/cc.es.js",
+  "es": "dist/cc.es.js",
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
     "pro": "rollup -c rollup.config.js",
@@ -27,18 +29,15 @@
     "cli-spinners": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.38",
-    "@babel/preset-env": "^7.0.0-beta.38",
-    "@babel/preset-typescript": "^7.0.0-beta.38",
     "@types/jest": "^22.1.0",
     "@types/node": "^9.3.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.1",
     "prettier": "^1.10.2",
     "rollup": "^0.55.0",
-    "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-typescript": "^0.8.1",
     "tslint": "^5.9.1",
     "typescript": "^2.6.2"
   }
