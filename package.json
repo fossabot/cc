@@ -10,13 +10,15 @@
     "dev": "rollup -c rollup.config.js -w",
     "pro": "rollup -c rollup.config.js",
     "lint": "tslint -c tslint.json '{src,test}/**/*.ts' --format codeFrame",
+    "prettier": "prettier --write '{src,test}/**/*.ts'",
     "test": "",
     "test:coverage": "",
     "precommit": "lint-staged"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
-      "npm run lint",
+      "tslint -c tslint.json --format codeFrame",
+      "prettier --write",
       "git add"
     ]
   },
@@ -32,6 +34,7 @@
     "@types/node": "^9.3.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.1",
+    "prettier": "^1.10.2",
     "rollup": "^0.55.0",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",
