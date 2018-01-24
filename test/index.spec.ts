@@ -1,4 +1,4 @@
-import { add } from '@/index'
+import { add } from '../src/'
 
 describe('@index', () => {
   describe('#add', () => {

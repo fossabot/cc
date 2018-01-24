@@ -1,13 +1,13 @@
 {
-  "name": "ask",
-  "version": "0.0.1",
+  "name": "cc",
+  "version": "1.0.0",
   "description": "Quick and easy to generate a cli",
   "main": "dist/cc.js",
+  "module": "dist/cc.es.js",
+  "es": "dist/cc.es.js",
   "repository": "https://github.com/blackcater/ask.git",
   "author": "blackcater <blackcater2015@gmail.com>",
   "license": "MIT",
-  "module": "dist/cc.es.js",
-  "es": "dist/cc.es.js",
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
     "pro": "rollup -c rollup.config.js",
@@ -16,6 +16,7 @@
     "test": "jest -c jest.config.json",
     "test:watch": "jest -c jest.config.json --watch",
     "test:coverage": "jest -c jest.config.json --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@types/jest": "^22.1.0",
     "@types/node": "^9.3.0",
+    "coveralls": "^3.0.0",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
     "lint-staged": "^6.0.1",
