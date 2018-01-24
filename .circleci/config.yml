@@ -1,6 +1,7 @@
 version: 2
 jobs:
   node9:
+    working_directory: ~/cc-project
     docker:
       - image: circleci/node:9
     steps:
@@ -22,6 +23,7 @@ jobs:
             yarn lint
             yarn test
   node8:
+    working_directory: ~/cc-project
     docker:
       - image: circleci/node:8
     steps:
@@ -43,6 +45,7 @@ jobs:
             yarn lint
             yarn test
   node6:
+    working_directory: ~/cc-project
     docker:
       - image: circleci/node:6
     steps:
@@ -64,6 +67,7 @@ jobs:
             yarn lint
             yarn test
   test:
+    working_directory: ~/cc-project
     docker:
       - image: circleci/node:6
     steps:
@@ -91,30 +95,6 @@ workflows:
   ci_cc_project:
     jobs:
       - node9
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
       - node8
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
       - node6
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
       - test
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
