@@ -95,6 +95,30 @@ workflows:
   ci_cc_project:
     jobs:
       - node9
+        filters:
+          branches:
+            only:
+              - dev
+              - master
+              - /tag-.*/
       - node8
+        filters:
+          branches:
+            only:
+              - dev
+              - master
+              - /tag-.*/
       - node6
+        filters:
+          branches:
+            only:
+              - dev
+              - master
+              - /tag-.*/
       - test
+        filters:
+          branches:
+            only:
+              - dev
+              - master
+              - /tag-.*/
