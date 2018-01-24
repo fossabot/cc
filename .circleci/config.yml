@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  node9:
+  build:
     working_directory: ~/cc-project
     docker:
       - image: circleci/node:9
@@ -21,72 +21,6 @@ jobs:
           name: "tslint and jest"
           command: |
             yarn lint
-            yarn test
-  node8:
-    working_directory: ~/cc-project
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: "using yarn and installing dependencies"
-          command: |
-            sudo npm install -g yarn
-            yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: "tslint and jest"
-          command: |
-            yarn lint
-            yarn test
-  node6:
-    working_directory: ~/cc-project
-    docker:
-      - image: circleci/node:6
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: "using yarn and installing dependencies"
-          command: |
-            sudo npm install -g yarn
-            yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: "tslint and jest"
-          command: |
-            yarn lint
-            yarn test
-  test:
-    working_directory: ~/cc-project
-    docker:
-      - image: circleci/node:6
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: "using yarn and installing dependencies"
-          command: |
-            sudo npm install -g yarn
-            yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: "tslint, jest and coveralls "
-          command: |
-            yarn lint
             yarn test:coverage
             yarn coveralls
 
@@ -95,27 +29,6 @@ workflows:
   ci_cc_project:
     jobs:
       - node9
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
-      - node8
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
-      - node6
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
-      - test
         filters:
           branches:
             only:
