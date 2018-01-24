@@ -28,7 +28,7 @@ workflows:
   version: 2
   ci_cc_project:
     jobs:
-      - build
+      - build:
         filters:
           branches:
             only:
