@@ -13,8 +13,9 @@
     "pro": "rollup -c rollup.config.js",
     "lint": "tslint -c tslint.json '{src,test}/**/*.ts' --format codeFrame",
     "prettier": "prettier --write '{src,test}/**/*.ts'",
-    "test": "",
-    "test:coverage": "",
+    "test": "jest -c jest.config.json",
+    "test:watch": "jest -c jest.config.json --watch",
+    "test:coverage": "jest -c jest.config.json --coverage",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -32,12 +33,14 @@
     "@types/jest": "^22.1.0",
     "@types/node": "^9.3.0",
     "husky": "^0.14.3",
+    "jest": "^22.1.4",
     "lint-staged": "^6.0.1",
     "prettier": "^1.10.2",
     "rollup": "^0.55.0",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.2",
     "rollup-plugin-typescript": "^0.8.1",
+    "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
     "typescript": "^2.6.2"
   }
