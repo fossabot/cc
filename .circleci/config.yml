@@ -28,7 +28,7 @@ workflows:
   version: 2
   ci_cc_project:
     jobs:
-      - node9
+      - build
         filters:
           branches:
             only:
