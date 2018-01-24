@@ -1,17 +1,28 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import json from 'rollup-plugin-json'
 import babel from 'rollup-plugin-babel'
 
 export default {
-  entry: 'src/index.js',
-  format: 'cjs',
-  dest: 'dist/index.js',
-  sourceMap: true,
+  input: 'src/index.ts',
+  output: [
+    {
+      file: 'dist/cc.js',
+      format: 'cjs',
+      sourceMap: true,
+    },
+    {
+      file: 'dist/cc.es.js',
+      format: 'es',
+      sourceMap: true,
+    }
+  ],
   plugins: [
     resolve(),
-    commonjs({ include: 'node_modules/**' }),
+    commonjs(),
     babel({ exclude: 'node_modules/**' }),
-    json(),
   ],
+  watch: {
+    include: 'src/**',
+    exclude: 'node_modules/**',
+  },
 }
