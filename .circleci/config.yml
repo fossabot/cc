@@ -4,6 +4,11 @@ jobs:
     working_directory: ~/cc-project
     docker:
       - image: circleci/node:9
+    branches:
+      only:
+        - dev
+        - master
+        - /tag-.*/
     steps:
       - checkout
       - restore_cache:
@@ -28,10 +33,4 @@ workflows:
   version: 2
   ci_cc_project:
     jobs:
-      - build:
-        filters:
-          branches:
-            only:
-              - dev
-              - master
-              - /tag-.*/
+      - build
