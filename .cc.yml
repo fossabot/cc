@@ -1,0 +1,5 @@
+commands:
+  - "init, i":
+      description: Generate a command line by answer questions
+  - "doctor, d":
+      descroption: Detect whether project supports cc
