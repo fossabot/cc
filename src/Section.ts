@@ -6,18 +6,11 @@
  * @project: the-bcflow/cc<https://github.com/the-bcflow/cc>
  * @author: blackcater<blackcater2015@gmail.com>
  */
-import ISection from './ISection'
+export default abstract class Section {
+  protected title: string
+  protected header: string
+  protected content: string
+  protected footer: string
 
-export default class Section implements ISection {
-  private title: string
-  private header: string
-  private footer: string
-
-  constructor(title: string) {
-    this.title = title
-  }
-
-  public print(): string {
-    return ''
-  }
+  public abstract print(): string
 }

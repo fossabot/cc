@@ -6,8 +6,11 @@
  * @project: the-bcflow/cc<https://github.com/the-bcflow/cc>
  * @author: blackcater<blackcater2015@gmail.com>
  */
-export default interface IAction {
-  name: string
-  params: object
-  action: () => void
+export default class Action {
+  protected name: string
+  protected params: object
+
+  public action(): void {
+    throw new Error('Please implement `AAction#action` method')
+  }
 }
