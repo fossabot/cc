@@ -4,7 +4,7 @@
   "description": "Quick and easy to generate a cli",
   "main": "dist/cc.js",
   "module": "dist/cc.es.js",
-  "es": "dist/cc.es.js",
+  "jsnext:main": "dist/cc.es.js",
   "repository": "https://github.com/blackcater/ask.git",
   "author": "blackcater <blackcater2015@gmail.com>",
   "license": "MIT",
